@@ -9,9 +9,6 @@ export PATH=$HOME/.local/environment-modules/Modules/3.2.10/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/.local/Tcl/lib:$LD_LIBRARY_PATH
 source $HOME/.local/environment-modules/Modules/3.2.10/init/bash
 
-alias makegrep="make -j4 BOPT=O 2>&1 | grep -i"
-alias makegrepB="make -B -j4 BOPT=O 2>&1 | grep -i"
-
 #autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 

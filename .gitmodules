@@ -1,3 +1,9 @@
 [submodule "bash/autojump"]
 	path = bash/autojump
 	url = https://github.com/wting/autojump
+[submodule "vim/vim-colors-solarized"]
+	path = vim/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "bash/gnome-terminal-colors-solarized"]
+	path = bash/gnome-terminal-colors-solarized
+	url = https://github.com/Anthony25/gnome-terminal-colors-solarized
