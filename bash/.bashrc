@@ -109,3 +109,6 @@ fi
 # added by Anaconda 2.1.0 installer
 #export PATH="/home/mattt/anaconda/bin:$PATH"
 eval `dircolors /home/${USER}/.dir_colors/dircolors`
+
+# autojump config
+[[ -s /home/${USER}/.autojump/etc/profile.d/autojump.sh ]] && source /home/${USER}/.autojump/etc/profile.d/autojump.sh
