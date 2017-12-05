@@ -29,7 +29,7 @@ augroup resCur
 augroup END
 
 set undofile                                                                       
-set undodir=/Users/mmorse/.vimundo
+set undodir=~/.vim/vim-undo
 set ruler
 set nocp
 set tw=80
@@ -40,10 +40,36 @@ let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 au BufRead,BufNewFile *.txx setfiletype cpp 
 au BufRead,BufNewFile *.tpp setfiletype cpp 
 
+let g:vim_markdown_folding_disabled = 1
 
-"Spell check
-"set spell spelllang=en_us
-
+# install plugins
 call plug#begin('~/.vim/plug-plug')
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
+
+"Spell check
+set spell spelllang=en_us
+
+let g:org_agenda_files = ['~/org/*.org']
+
+set foldmethod=syntax
+set nofoldenable
+nnoremap <space> za
+autocmd BufNewFile,BufRead *.tpp   set syntax=cpp
+autocmd BufNewFile,BufRead *.txx   set syntax=cpp
+
+" from https://stackoverflow.com/questions/2372307/opening-files-in-vim-using-fuzzy-search
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+" CtrlP options
+let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 0
+let g:tex_flavor = "latex"
+
+
