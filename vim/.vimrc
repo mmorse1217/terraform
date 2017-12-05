@@ -43,3 +43,7 @@ au BufRead,BufNewFile *.tpp setfiletype cpp
 
 "Spell check
 "set spell spelllang=en_us
+
+call plug#begin('~/.vim/plug-plug')
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()

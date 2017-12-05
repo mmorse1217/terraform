@@ -26,7 +26,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #cp vim/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
 
 # for bash
-./bash/gnome-terminal-colors-solarized/install.sh
+#./bash/gnome-terminal-colors-solarized/install.sh
 
 # change default editor
-sudo update-alternatives --config editor
+#sudo update-alternatives --config editor
