@@ -12,14 +12,18 @@ cd bash/autojump
 cd ../../
 
 #install docker
-sh bash/install_docker_ubuntu.sh
+#sh bash/install_docker_ubuntu.sh
+
+# install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 # user input needed; all saved for the end
 # install solarized...
 # for vim
-mkdir -p ~/.vim/colors/
-cp vim/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
+#mkdir -p ~/.vim/colors/
+#cp vim/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
 
 # for bash
 ./bash/gnome-terminal-colors-solarized/install.sh
