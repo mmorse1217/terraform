@@ -1,3 +1,12 @@
+
+" install plugins
+call plug#begin('~/.vim/plug-plug')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'micha/vim-colors-solarized'
+Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
+Plug 'vim-latex/vim-latex'
+call plug#end()
+
 syntax on
 set background=dark
 "let g:solarized_termcolors=256
@@ -39,13 +48,9 @@ let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 "set foldclose=all
 au BufRead,BufNewFile *.txx setfiletype cpp 
 au BufRead,BufNewFile *.tpp setfiletype cpp 
-
+let g:plug_timeout=90000
 let g:vim_markdown_folding_disabled = 1
 
-# install plugins
-call plug#begin('~/.vim/plug-plug')
-Plug 'ctrlpvim/ctrlp.vim'
-call plug#end()
 
 "Spell check
 set spell spelllang=en_us
