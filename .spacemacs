@@ -338,11 +338,15 @@ you should place your code here."
     (setq org-habit-following-days 3)
     (setq backup-directory-alist `(("." . "~/scratch/emacs-backups")))
     (setq backup-by-copying t)
+    (setq org-hierarchical-checkbox-statistics nil)
     ;; org-capture template set up
     (setq org-capture-templates
           '(
             ("j" "Journal"
              entry (file+datetree "~/org/captains_log.org")
+             "* %?")
+            ("f" "Food Journal"
+             entry (file+datetree "~/org/food.org")
              "* %?")
             ("w" "Weekly reviews"
              entry (file+datetree "~/org/reviews.org")

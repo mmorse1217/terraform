@@ -7,3 +7,6 @@
 [submodule "bash/gnome-terminal-colors-solarized"]
 	path = bash/gnome-terminal-colors-solarized
 	url = https://github.com/Anthony25/gnome-terminal-colors-solarized
+[submodule "dotfiles"]
+	path = dotfiles
+	url = https://github.com/mmorse1217/dotfiles

@@ -1,10 +1,10 @@
 #!/bin/bash
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
-sudo apt-get install -y --force-yes libncurses5-dev libgnome2-dev libgnomeui-dev \
+apt-get install -y --force-yes libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
     python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
-sudo apt remove -y vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-nox
+apt remove -y vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-nox
 cd ~/Downloads
 git clone https://github.com/vim/vim.git
 cd vim
@@ -19,10 +19,10 @@ cd vim
             --enable-cscope \
             --prefix=/usr/local
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
-sudo apt-get install checkinstall
+apt-get install checkinstall
 cd ~/Downloads/vim
-sudo checkinstall
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
-sudo update-alternatives --set editor /usr/bin/vim
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
-sudo update-alternatives --set vi /usr/bin/vim
+checkinstall
+update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
+update-alternatives --set editor /usr/bin/vim
+update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
+update-alternatives --set vi /usr/bin/vim

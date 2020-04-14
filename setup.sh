@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # install generic junk
+sh apt-get.sh
 sudo apt-get install -y --force-yes \
         emacs \
         mercurial \
@@ -15,7 +16,7 @@ sudo apt-get install -y --force-yes \
 
 
 # setup symlink
-sh symlink_dotfiles.sh
+sh dotfiles/setup.sh
 
 #install autojump
 cd bash/autojump
@@ -26,13 +27,9 @@ cd ../../
 #sh bash/install_docker_ubuntu.sh
 
 # install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 sh bash/apt-get.sh
-mkdir -p ~/.vim/vim-undo
 
-vim -S vim/setup.vim
 # user input needed; all saved for the end
 # install solarized...
 # for vim: in .vimrc as plugin

@@ -12,6 +12,7 @@ RUN apt-get install -y \
     openssh-client 
 # Install vim from source
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+#RUN bash vim/setup.sh
 RUN apt remove vim vim-runtime gvim
 
 RUN apt-get install -y --force-yes checkinstall libncurses5-dev  \
@@ -34,12 +35,79 @@ RUN cd /vim && \
             --prefix=/usr/local 
 RUN cd /vim && make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 RUN cd /vim && checkinstall
-RUN update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
-RUN update-alternatives --set editor /usr/bin/vim
-RUN update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
-RUN update-alternatives --set vi /usr/bin/vim
+#RUN update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
+#RUN update-alternatives --set editor /usr/bin/vim
+#RUN update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
+#RUN update-alternatives --set vi /usr/bin/vim
 CMD ["/bin/bash"]
-## Install emacs + spacemacs from source
+RUN apt-get install -y curl
+# Install vim-plug to manage packages
+RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# make vim-undo history directory
+RUN mkdir -p ~/.vim/vim-undo
+
+# Install supertab
+#vim -c 'so % | q' somevimball.vba
+
+# Begin plugin install: these steps are required from coc.nvim
+# Install node
+
+#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash 
+#RUN source ~/.bashrc
+#RUN nvm install node
+RUN apt-get install -y nodejs npm yarn
+
+# change for ubuntu
+RUN apt-get install -y cmake clangd-9
+RUN update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
+ADD vim/ env-setup/vim
+ADD dotfiles/* /root/
+#RUN cd /env-setup && bash dotfiles/setup.sh
+
+# Setup vim undo history directory
+RUN mkdir -p ~/.vim/vim-undo
+RUN cd /env-setup && sh vim/setup.sh
+#RUN apt-get install pip 
+#RUN pip install pyflakes numpy
+#SHELL ["/bin/bash", "--login", "-c"]
+CMD ["/bin/bash"]
+#RUN git clone --recursive https://github.com/cquery-project/cquery.git &&\
+#cd cquery &&\
+#git submodule update --init &&\
+#mkdir build && cd build &&\
+#cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES &&\
+#cmake --build . &&\
+#cmake --build . --target install
+# "languageserver": {
+#    "cquery": {
+#      "command": "cquery",
+#      "args": ["--log-file=/tmp/cq.log"],
+#      "filetypes": ["c", "cpp"],
+#      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".git/", ".hg/"],
+#      "initializationOptions": {
+#        "cacheDirectory": "/tmp/cquery"
+#      }
+#    }
+#  }
+#vim +'PlugInstall --sync' +qa > /dev/null
+#Install other packages from apt-get
+#RUN apt-get install -y --force-yes \
+#        git \
+#        silversearcher-ag \
+#        tmux \
+#        cmake3 \
+#        build-essential
+#
+# Pull dotfiles and symlink
+
+# Install emacs + spacemacs from source
+#RUN apt-get install -y emacs
+#RUN mv .emacs.d .emacs.d.bak
+#RUN mv .emacs .emacs.bak
+#RUN git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
 #
 ## Install Docker
 #RUN sudo apt-get install -y docker.io
