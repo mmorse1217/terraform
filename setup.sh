@@ -1,34 +1,18 @@
 #!/bin/bash
 
-# install generic junk
-sh apt-get.sh
-sudo apt-get install -y --force-yes \
-        emacs \
-        mercurial \
-        git \
-        openssh-client \
-        openssh-server \
-        silversearcher-ag \
-        tar \
-        tmux \
-        cmake3 \
-        build-essential
+# Install generic packages on apt-get
+bash apt-get.sh
 
+# Install explicit packages with manual builds
+bash install_custom_packages.sh
 
-# setup symlink
-sh dotfiles/setup.sh
+# Setup symlinks for dotfiles
+bash dotfiles/setup.sh
 
-#install autojump
-cd bash/autojump
-./install.py
-cd ../../
-
-#install docker
-#sh bash/install_docker_ubuntu.sh
-
-# install vim-plug
-
-sh bash/apt-get.sh
+# Install vim
+bash vim/setup.sh
+# Install spacemacs
+# Install and symlink org files
 
 # user input needed; all saved for the end
 # install solarized...

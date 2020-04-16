@@ -62,16 +62,33 @@ RUN apt-get install -y nodejs npm yarn
 # change for ubuntu
 RUN apt-get install -y cmake clangd-9
 RUN update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
-ADD vim/ env-setup/vim
-ADD dotfiles/* /root/
 #RUN cd /env-setup && bash dotfiles/setup.sh
 
 # Setup vim undo history directory
 RUN mkdir -p ~/.vim/vim-undo
-RUN cd /env-setup && sh vim/setup.sh
 #RUN apt-get install pip 
 #RUN pip install pyflakes numpy
 #SHELL ["/bin/bash", "--login", "-c"]
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install -y texlive-latex-extra
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN ~/.cargo/bin/cargo install --git https://github.com/latex-lsp/texlab.git
+
+# Install python
+
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
+    bash Miniconda3-latest-Linux-x86_64.sh -b && \
+    echo 'export PATH="/root/miniconda3/bin:$PATH"' | cat - ~/.bashrc > /tmp/out \
+    &&  mv /tmp/out ~/.bashrc && \
+    rm Miniconda3-latest-Linux-x86_64.sh
+ENV PATH /root/miniconda3/bin:$PATH
+RUN pip install python-language-server pyflakes
+ADD vim/ env-setup/vim
+ADD dotfiles/* /root/
+ADD dotfiles/coc-settings.json /root/.vim/coc-settings.json
+RUN cd /env-setup && sh vim/setup.sh
+
+
 CMD ["/bin/bash"]
 #RUN git clone --recursive https://github.com/cquery-project/cquery.git &&\
 #cd cquery &&\
