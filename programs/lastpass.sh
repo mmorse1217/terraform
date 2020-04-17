@@ -1,7 +1,8 @@
 #!/bin/bash
 
+echo "Installing Lastpass..."
 # Install dependencies
-apt-get --no-install-recommends -yqq install \
+sudo apt --no-install-recommends -yqq install \
   bash-completion \
   build-essential \
   cmake \
@@ -19,5 +20,5 @@ apt-get --no-install-recommends -yqq install \
 git clone https://github.com/lastpass/lastpass-cli.git
 cd lastpass-cli
 make
-make install
+sudo make install
 rm -rf lastpass-cli

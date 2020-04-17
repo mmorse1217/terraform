@@ -2,7 +2,7 @@
 # Taken more or less from https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 mkdir -p ~/.vim/build
 cd ~/.vim/build
-apt install -y --force-yes \
+sudo apt install -y --force-yes \
     libncurses5-dev \
     libgnome2-dev \
     libgnomeui-dev \
@@ -20,7 +20,7 @@ apt install -y --force-yes \
 
 
 # remove system vim
-apt remove -y vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-nox
+sudo apt remove -y vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-nox
 
 # clone working vim
 git clone https://github.com/vim/vim.git .
@@ -35,11 +35,13 @@ git clone https://github.com/vim/vim.git .
             --enable-cscope \
             --prefix=/usr/local
 
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
-
+sudo make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+sudo make install
 # verify installation and update user preferences to use vim
-checkinstall
-update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
-update-alternatives --set editor /usr/bin/vim
-update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
-update-alternatives --set vi /usr/bin/vim
+sudo checkinstall
+sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
+sudo update-alternatives --set editor /usr/local/bin/vim
+sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
+sudo update-alternatives --set vi /usr/local/bin/vim
+sudo update-alternatives --install /usr/bin/vim vim /usr/local/bin/vim 1
+sudo update-alternatives --set vim /usr/bin/vim

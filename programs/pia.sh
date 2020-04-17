@@ -4,4 +4,4 @@
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 
 # requires username
-bash pia-nm.sh
+sudo bash pia-nm.sh 

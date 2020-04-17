@@ -1,6 +1,7 @@
 #!/bin/bash
 # Install autojump
+echo "Installing autojump..."
 cd bash/autojump
-./install.py
+python install.py
 cd ../../
 
