@@ -21,4 +21,5 @@ git clone https://github.com/lastpass/lastpass-cli.git
 cd lastpass-cli
 make
 sudo make install
+cd ..
 rm -rf lastpass-cli
