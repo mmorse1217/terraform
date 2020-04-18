@@ -10,5 +10,5 @@ Terminal=false
 Type=Application
 Icon=dropbox
 Categories=Network;FileTransfer;
-StartupNotify=false' | cat - ~/.config/autostart > /tmp/out 
-mv /tmp/out ~/.config/autostart 
+StartupNotify=false' | cat - ~/.config/autostart > /tmp/dropbox.desktop 
+mv /tmp/dropbox.desktop ~/.config/autostart 
