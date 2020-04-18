@@ -14,5 +14,5 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 # allow docker commands to be run without root privileges
 id -g docker >/dev/null 2>&1 || sudo groupadd docker
 sudo usermod -aG docker $USER
-newgrp docker
+#newgrp docker
 docker run hello-world

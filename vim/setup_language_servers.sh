@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Install packages required for coc.nvim and installed language servers 
+
+# add nodejs ppa 
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y cmake \
     clangd-9 \
     texlive-latex-extra \
     nodejs \
-    npm \
     yarn
 
 # Install dependencies for latex language server

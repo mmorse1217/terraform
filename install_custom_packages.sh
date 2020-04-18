@@ -1,8 +1,8 @@
 #!/bin/bash
-#bash programs/python.sh
-#bash programs/autojump.sh
-#bash programs/googlechrome.sh
-#bash programs/docker.sh
+bash programs/python.sh
+bash programs/autojump.sh
+bash programs/googlechrome.sh
+bash programs/docker.sh
 bash programs/lastpass.sh
 bash programs/spotify.sh
 bash programs/anki.sh
