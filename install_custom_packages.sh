@@ -10,6 +10,7 @@ bash programs/openrazer.sh
 bash programs/steam.sh
 bash programs/dropbox.sh
 bash programs/spacemacs.sh
+bash programs/tmux.sh
 
 # The big boy...
 bash programs/vim.sh
