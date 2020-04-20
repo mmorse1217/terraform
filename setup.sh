@@ -11,7 +11,6 @@ bash dotfiles/setup.sh
 # Install explicit packages with manual builds
 bash install_custom_packages.sh
 
-
 bash setup_ui_config.sh
 # All the following commands require user input
 # Install solarized theme for bash (requires GNOME profile selection)
