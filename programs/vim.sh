@@ -4,7 +4,7 @@
 bash vim/build_from_source.sh
 
 # Set up language servers (for use with coc.nvim)
-if [[ -z "${DEPLOY_ENV}" ]]; then
+if [[ -z "${VIM_DEV}" ]]; then
     bash vim/setup_language_servers.sh
 fi
 
