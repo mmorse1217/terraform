@@ -11,6 +11,7 @@ sudo apt install -y \
         cmake \
 	    dconf-cli\
         emacs \
+        htop \
         git \
         okular \
         openssh-client \
