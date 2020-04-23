@@ -2,10 +2,10 @@
 
 # Install packages required for coc.nvim and installed language servers 
 
-bash lang-servers/setup.sh
-bash lang-servers/python-language-server.sh
-bash lang-servers/clangd.sh
-bash lang-servers/texlab.sh
+bash vim/lang-servers/setup.sh
+bash vim/lang-servers/python-language-server.sh
+bash vim/lang-servers/clangd.sh
+bash vim/lang-servers/texlab.sh
 ## Install latest version of cmake
 #apt purge -y --auto-remove cmake && \
 #    wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | apt-key add - && \
