@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime  
 sudo apt-get install -y tzdata 
 dpkg-reconfigure --frontend noninteractive tzdata   
-sudo apt install -y 
+sudo apt install -y \
     texlive-latex-extra \
     texlive-science \
     curl
