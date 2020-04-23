@@ -14,9 +14,6 @@ sudo apt install -y cmake \
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
 
 # Install dependencies for latex language server
-ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime 
-sudo apt-get install -y tzdata 
-dpkg-reconfigure --frontend noninteractive tzdata  
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ~/.cargo/bin/cargo install --git https://github.com/latex-lsp/texlab.git
