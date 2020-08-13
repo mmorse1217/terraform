@@ -13,9 +13,11 @@ sudo apt install -y \
         emacs \
         htop \
         git \
+        lm-sensors \
         okular \
         openssh-client \
         openssh-server \
+        openconnect \
         tmux \
         thunderbird \
         virtualbox \
@@ -25,6 +27,7 @@ sudo apt install -y \
         ca-certificates \
         curl \
         gnupg-agent \
+        indicator-cpufreq \
         software-properties-common \
         vlc
 
