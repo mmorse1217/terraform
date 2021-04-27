@@ -7,6 +7,10 @@ dpkg-reconfigure --frontend noninteractive tzdata
 sudo apt install -y \
     texlive-latex-extra \
     texlive-science \
+    fswatch \ 
+    texlive-publishers \
+    latexmk \
+    latexdiff \
     curl
 
 # Install dependencies for latex language server

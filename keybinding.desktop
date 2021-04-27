@@ -1,5 +1,8 @@
 [Desktop Entry]
-Name=Swap
-Exec=xmodmap -e "keycode 66 = Control_L" && xmodmap -e "keycode 37 = Alt_L" && xmodmap -e "keycode 64 = Control_L" && xmodmap -e "keycode 105 = Alt_R" && xmodmap -e "keycode 108 = Control_R"
+Name=Load keybindings
+Exec=/usr/bin/xmodmap /home/$USER/.Xmodmap
 Terminal=false
 Type=Application
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Comment=xmodmap script
