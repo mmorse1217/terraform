@@ -7,7 +7,7 @@ dpkg-reconfigure --frontend noninteractive tzdata
 sudo apt install -y \
     texlive-latex-extra \
     texlive-science \
-    fswatch \ 
+    fswatch \
     texlive-publishers \
     latexmk \
     latexdiff \
