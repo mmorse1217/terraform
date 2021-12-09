@@ -15,5 +15,5 @@ sudo apt install -y \
 
 # Install dependencies for latex language server
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-~/.cargo/bin/cargo install --git https://github.com/latex-lsp/texlab.git
+~/.cargo/bin/cargo install --git https://github.com/latex-lsp/texlab.git --locked
 
