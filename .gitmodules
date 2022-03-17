@@ -7,3 +7,4 @@
 [submodule "dotfiles"]
 	path = dotfiles
 	url = https://github.com/mmorse1217/dotfiles
+	branch = master
