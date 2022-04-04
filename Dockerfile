@@ -11,16 +11,14 @@ CMD ["/bin/bash"]
 
 # Clone environment configuration
 RUN git clone https://github.com/mmorse1217/terraform.git --recursive 
-#
+
 WORKDIR /terraform 
 RUN bash apt.sh 
 RUN bash dotfiles/setup.sh 
-#
-RUN bash programs/python.sh 
 RUN bash programs/tmux.sh 
-#
-#RUN bash programs/vim.sh  
+
+ENV LC_ALL C.UTF-8
 RUN bash vim/build_from_source.sh  
-RUN bash vim/setup_language_servers.sh  
+RUN bash vim/lang-servers/setup.sh  
 RUN bash vim/install_plugins.sh
 CMD ["/bin/bash"]
