@@ -15,6 +15,7 @@ sudo apt install -y --force-yes \
     libxt-dev \
     python-dev \
     python3-dev \
+    python3-pip \
     git \
     checkinstall
 
@@ -30,9 +31,12 @@ git clone https://github.com/vim/vim.git .
             --enable-multibyte \
             --enable-python3interp=yes \
             --enable-luainterp=yes \
-            --with-python3-config-dir=/usr/lib/python3.4/config-3.4m-x86_64-linux-gnu/ \
+            --with-python3-command=python3 \
+            --with-python3-config-dir=$(python3-config --configdir) \
             --enable-gui=gtk2 \
             --enable-cscope \
+            --enable-terminal  \
+            --enable-fail-if-missing  \
             --prefix=/usr/local
 
 sudo make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
