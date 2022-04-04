@@ -15,6 +15,7 @@ sudo apt install -y --force-yes \
     libxt-dev \
     python-dev \
     python3-dev \
+    python3-pip \
     git \
     checkinstall
 
