@@ -1,0 +1,4 @@
+FROM ubuntu:latest
+COPY programs/ /programs
+RUN bash programs/anki.sh
+CMD ["/bin/bash"]
