@@ -2,7 +2,7 @@
 echo "Installing Spacemacs..."
 echo "Installing dependencies..."
 apt update 
-apt install -y git ca-certificates --no-install-recommends
+apt install -y ca-certificates emacs git --no-install-recommends
 
 echo "Backing up .emacs.d and .emacs..."
 cd ~
