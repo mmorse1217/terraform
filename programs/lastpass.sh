@@ -2,24 +2,27 @@
 
 echo "Installing Lastpass..."
 # Install dependencies
-sudo apt --no-install-recommends -yqq install \
+apt update
+apt --no-install-recommends -yqq install \
   bash-completion \
   build-essential \
   cmake \
+  git \
   libcurl4  \
   libcurl4-openssl-dev  \
   libssl-dev  \
   libxml2 \
   libxml2-dev  \
-  libssl1.1 \
   pkg-config \
   ca-certificates \
   xclip
+rm -rf /var/lib/apt/lists/*
 
 # Download, build and install
 git clone https://github.com/lastpass/lastpass-cli.git
 cd lastpass-cli
 make
-sudo make install
+make install
 cd ..
+
 rm -rf lastpass-cli

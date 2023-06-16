@@ -1,4 +1,9 @@
 FROM ubuntu:latest
 COPY programs/ /programs
-RUN bash programs/anki.sh
+#RUN bash programs/anki.sh
+#RUN bash programs/autojump.sh
+#RUN bash programs/spacemacs.sh
+#RUN bash programs/python.sh
+#RUN bash programs/cmake.sh
+RUN bash programs/googlechrome.sh
 CMD ["/bin/bash"]

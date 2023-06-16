@@ -8,7 +8,6 @@ sudo apt update
 
 sudo apt install -y \
         build-essential \
-        cmake \
 	    dconf-cli\
         emacs \
         htop \
@@ -20,7 +19,6 @@ sudo apt install -y \
         openconnect \
         tmux \
         thunderbird \
-        virtualbox \
         docker.io \
         silversearcher-ag \
         apt-transport-https \
